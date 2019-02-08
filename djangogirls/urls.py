@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path
 
 from blog import views
+from blog.views import post_detail, post_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.post_list, name='post_list'),
+    path('', post_list, name='post_list'),
+    path('post/<int:pk>/', post_detail, name='post_detail'),
 
 ]
